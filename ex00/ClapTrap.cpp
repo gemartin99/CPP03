@@ -8,6 +8,21 @@
 	std::cout << "Default constructor called" << std::endl;
 }*/
 
+ClapTrap& ClapTrap::operator=(const ClapTrap &other)
+{
+	this->name = other.name;
+	this->energy = other.energy;
+	this->damage = other.damage;
+	this->health = other.health;
+	std::cout << "Copy assignment operator called" << std::endl;
+	return *this;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &copy) : name(copy.name), health(copy.health), energy(copy.energy), damage(copy.damage)
+{
+	 std::cout << "Copy constructor called" << std::endl;
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "Destructor called" << std::endl;

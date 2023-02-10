@@ -19,10 +19,9 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 	return *this;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &copy)
+ClapTrap::ClapTrap(const ClapTrap &copy) : name(copy.name), health(copy.health), energy(copy.energy), damage(copy.damage)
 {
 	 std::cout << "ClapTrap copy constructor called" << std::endl;
-	 *this = copy;
 }
 
 ClapTrap::~ClapTrap()

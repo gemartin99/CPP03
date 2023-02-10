@@ -1,5 +1,5 @@
 #include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+
 #include <iostream>
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &other)
@@ -14,13 +14,16 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 
 ScavTrap::ScavTrap(const ScavTrap &copy)
 {
-	std::cout << "ScavTrap copy constructor called" << std::endl;
-	*this = copy;
+	 std::cout << "ScavTrap copy constructor called" << std::endl;
+	 this->name = copy.name;
+	 this->energy = copy.energy;
+	 this->health = copy.health;
+	 this->damage = copy.damage;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap default constructor called" << std::endl;
+	std::cout << "ScavTrap constructor called" << std::endl;
 	this->name = name;
 	this->health = 100;
 	this->energy = 50;

@@ -3,10 +3,6 @@
 #include <iostream>
 #include <string>
 
-/*ClapTrap::ClapTrap()
-{
-	std::cout << "Default constructor called" << std::endl;
-}*/
 
 ClapTrap::~ClapTrap()
 {
@@ -36,14 +32,23 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	while (this->energy > 0 && amount > 0 && this->health < 10 && this->health > 0)
+	while (this->energy > 0 && amount > 0 && this->health < 10 && this->health > 0 && this->damage == 0) //claptrap
 	{
 		this->energy--;
 		amount--;
 		this->health++;
 		std::cout << "ClapTrap " << this->name << " has repaired itself and gained a life" << std::endl;
 	}
-	if (this->health == 10)
+	if (this->health == 10 && this->damage == 0)
+		std::cout << "ClapTrap " << this->name << " cannot be repaired because it has the maximum number of lives." << std::endl;
+	while (this->energy > 0 && amount > 0 && this->health < 100 && this->health > 0 && this->damage == 20) //claptrap
+	{
+		this->energy--;
+		amount--;
+		this->health++;
+		std::cout << "ClapTrap " << this->name << " has repaired itself and gained a life" << std::endl;
+	}
+	if (this->health == 100 && this->damage == 20)
 		std::cout << "ClapTrap " << this->name << " cannot be repaired because it has the maximum number of lives." << std::endl;
 }
 

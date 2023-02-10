@@ -6,11 +6,12 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string name;
 		int health;
 		int energy;
 		int damage;
+		ClapTrap(void);
 	public:
 		ClapTrap(std::string name);
 		~ClapTrap();

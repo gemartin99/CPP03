@@ -2,9 +2,13 @@
 
 #include <iostream>
 
-ScavTrap::ScavTrap(std::string name): name(name), health(100), energy(50), damage(20)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap constructor called" << std::endl;
+	this->name = name;
+	this->health = 100;
+	this->energy = 50;
+	this->damage = 20;
 }
 
 ScavTrap::~ScavTrap()
